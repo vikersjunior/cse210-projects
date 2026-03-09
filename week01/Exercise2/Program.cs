@@ -4,34 +4,63 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Exercise 2: Conditionals
-        // Ask user for a number
-        Console.Write("What is your number? ");
+        // Exercise 2: Grade Checker with If Statements
+        // Ask user for their grade percentage
+        Console.Write("What is your grade percentage? ");
         string input = Console.ReadLine();
-        int number = int.Parse(input);
+        int percentage = int.Parse(input);
 
-        // Check if the number is positive, negative, or zero
-        if (number > 0)
+        // Determine letter grade
+        string letter = "";
+
+        if (percentage >= 90)
         {
-            Console.WriteLine($"{number} is positive.");
+            letter = "A";
         }
-        else if (number < 0)
+        else if (percentage >= 80)
         {
-            Console.WriteLine($"{number} is negative.");
+            letter = "B";
+        }
+        else if (percentage >= 70)
+        {
+            letter = "C";
+        }
+        else if (percentage >= 60)
+        {
+            letter = "D";
         }
         else
         {
-            Console.WriteLine($"{number} is zero.");
+            letter = "F";
         }
 
-        // Check if the number is even or odd
-        if (number % 2 == 0)
+        // Determine the sign (+ or -)
+        string sign = "";
+        int lastDigit = percentage % 10;
+
+        if (letter != "A" && letter != "F")
         {
-            Console.WriteLine($"{number} is even.");
+            if (lastDigit >= 7)
+            {
+                sign = "+";
+            }
+            else if (lastDigit < 3)
+            {
+                sign = "-";
+            }
+        }
+
+        // Print the letter grade with sign
+        Console.WriteLine($"Your grade is: {letter}{sign}");
+
+        // Check if user passed the course (70 or above)
+        if (percentage >= 70)
+        {
+            Console.WriteLine("Congratulations! You passed the course!");
         }
         else
         {
-            Console.WriteLine($"{number} is odd.");
+            Console.WriteLine("Keep trying! You'll do better next time.");
         }
     }
 }
