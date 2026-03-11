@@ -1,5 +1,14 @@
 using System;
 
+/*
+ * EXCEEDING REQUIREMENTS:
+ * This program includes word count tracking for each journal entry.
+ * When displaying entries, the word count is automatically calculated
+ * and shown to help users track their writing progress and productivity.
+ * This feature encourages journaling by providing positive feedback on
+ * how much they've written each day.
+ */
+
 class Program
 {
     static void Main(string[] args)
