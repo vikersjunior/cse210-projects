@@ -1,9 +1,11 @@
-using System;
+// Creativity extension:
+// Added a level and rank system that grows with total points.
 
-class Program
+public class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the EternalQuest Project.");
+        GoalManager manager = new GoalManager();
+        manager.Start();
     }
 }
